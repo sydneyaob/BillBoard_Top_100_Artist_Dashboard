@@ -8,12 +8,12 @@ Link to the original [github repository.](https://github.com/TheGreekGoddess/Pro
 After cleaning up dataset of BillBoard Top 100 artist from 1999 to 2020 found on Kaggle, we developed an interactive dashboard which allows user to search the artist by name and it plots the average song attributes of the artist, number of times the artist came on the billboard top 100 chart, word cloud of frequently used words by the artist and a data table on few songs of the artists.
 
 # WHAT WE DISCOVERED
-Top Solo Male Artist by Hits: Drake
-Top Solo Female Artist by Hits: Taylor Swift
-Top Group Artist by Hits: Maroon 5
-Top Solo Male Artist by Followers: Ed Sheeran
-Top Solo Female Artist by Followers: Rihanna
-Top Group Artist by Followers: Coldplay
+- Top Solo Male Artist by Hits: Drake 
+- Top Solo Female Artist by Hits: Taylor Swift
+- Top Group Artist by Hits: Maroon 5
+- Top Solo Male Artist by Followers: Ed Sheeran
+- Top Solo Female Artist by Followers: Rihanna
+- Top Group Artist by Followers: Coldplay
 
 # MACHINE LEARNING ANALYSIS
 The team developed a machine learning model to predict if the song will be a hit based on certain attributes of the song. At first we tried to predict the exact popularity of the song but the models accuracy was very low, hence the output nodes were decreased to just two, will the song be a hit or a miss? (i.e. Will the song end up in top 10 of the billboard 100?)
