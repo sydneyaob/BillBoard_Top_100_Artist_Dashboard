@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="apple-touch-icon" sizes="76x76" href="assets/img/apple-icon.png">
+  <link rel="icon" type="image/png" href="assets/img/avatar.png">
+  <!-- ODROD updated the title -->
+  <title>    
+    Machine Learning
+  </title>
+  <!-- ODROD update completed -->
+  <!--     Fonts and icons     -->
+  <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,600,700,800" rel="stylesheet" />
+  <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+  <!-- Nucleo Icons -->
+  <link href="assets/css/nucleo-icons.css" rel="stylesheet" />
+  <!-- CSS Files -->
+  <link href="assets/css/black-dashboard.css?v=1.0.0" rel="stylesheet" />
+  <!-- CSS Just for demo purpose -->
+  <link href="assets/demo/demo.css" rel="stylesheet" />
+</head>
+
+<body class="">
+  <div class="wrapper">
+    <div class="sidebar">
+      <!--
+        Tip 1: You can change the color of the sidebar using: data-color="blue | green | orange | red"
+    -->
+      <div class="sidebar-wrapper">
+        <div class="logo">
+          <a href="javascript:void(0)" class="simple-text logo-mini">
+            <!-- ODROD updated the logo and Team name -->
+            DJ
+          </a>
+          <a href="javascript:void(0)" class="simple-text logo-normal">
+            Muskatweeters
+            <!-- ODROD update completed -->
+          </a>
+        </div>
+        <ul class="nav">
+          <li >
+            <!-- ODROD updated the href, icon and tab name -->
+            <a href="https://billboard-top-100.herokuapp.com/">
+              <i class="tim-icons icon-chart-pie-36"></i>
+              <p>Dashboard</p>
+              <!-- ODROD update completed -->
+            </a>
+          </li>
+          <li>
+            <!-- ODROD updated the href, icon and tab name -->
+            <a href="./team_profiles.html">
+              <i class="tim-icons icon-single-02"></i>
+              <p>Team Profiles</p>
+              <!-- ODROD update completed -->
+            </a>
+          </li>
+          <li>
+            <!-- ODROD updated the href, icon and tab name -->
+            <a href="./tableau_visualization.html">
+              <i class="tim-icons icon-chart-bar-32"></i>
+              <p>Tableau Visualization</p>
+              <!-- ODROD update completed -->
+            </a>
+          </li>
+          <li>
+            <!-- ODROD updated the href, icon and tab name -->
+            <a href="./definitions.html">
+              <i class="tim-icons icon-time-alarm"></i>
+              <p>Timeline & Definitions</p>
+              <!-- ODROD update completed -->
+            </a>
+          </li>
+          <li class="active ">
+            <!-- ODROD updated the href, icon and tab name -->
+            <a href="./machine_learning.html">
+              <i class="tim-icons icon-atom"></i>
+              <p>Machine Learning</p>
+              <!-- ODROD update completed -->
+            </a>
+          </li>
+          <li>
+            <!-- ODROD updated the href, icon and tab name -->
+            <a href="./tables.html">
+              <i class="tim-icons icon-headphones"></i>
+              <p>Billboard Data</p>
+              <!-- ODROD update completed -->
+            </a>
+          </li>
+          <li>
+            <!-- ODROD updated the href, icon and tab name -->
+            <a href="./project_summary.html">
+              <i class="tim-icons icon-notes"></i>
+              <p>Project Summary</p>
+              <!-- ODROD update completed -->
+            </a>
+          </li>
+          <li>
+            <!-- ODROD added a tab for Bob -->
+            <a href="./the_master.html">
+              <i class="tim-icons icon-satisfied"></i>
+              <p>The Master</p>
+              <!-- ODROD update completed -->
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="main-panel">
+      <!-- Navbar -->
+      <nav class="navbar navbar-expand-lg navbar-absolute navbar-transparent">
+        <div class="container-fluid">
+          <div class="navbar-wrapper">
+            <div class="navbar-toggle d-inline">
+              <button type="button" class="navbar-toggler">
+                <span class="navbar-toggler-bar bar1"></span>
+                <span class="navbar-toggler-bar bar2"></span>
+                <span class="navbar-toggler-bar bar3"></span>
+              </button>
+            </div>
+            <!-- ODROD updated tab name -->
+            <a class="navbar-brand" href="javascript:void(0)">Machine Learning</a>
+            <!-- ODROD update completed -->
+          </div>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-bar navbar-kebab"></span>
+            <span class="navbar-toggler-bar navbar-kebab"></span>
+            <span class="navbar-toggler-bar navbar-kebab"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navigation">
+            <ul class="navbar-nav ml-auto">
+              <!-- ODROD commenting code out -->
+              <li class="search-bar input-group">
+                <!-- UMAR deleteing unnecassary code -->
+              </li>
+              <li class="separator d-lg-none"></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <div class="modal modal-search fade" id="searchModal" tabindex="-1" role="dialog" aria-labelledby="searchModal" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <!-- UMAR changed id = "SearchBar" and removed placeholder -->
+              <input type="text" class="form-control" id="SearchBar">
+              <!-- UMAR added id="close" for click identification in SearchBar JS file -->
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <i class="tim-icons icon-simple-remove"></i>
+              </button>
+            </div>
+            <!-- UMAR Working Search Bar -->
+            <div id="SearchItemsContainer"> 
+            </div>
+            <!-- UMAR updates end -->
+          </div>
+        </div>
+      </div>
+      <!-- End Navbar -->
+      <div class="content">
+        <div class="row">
+          <div class="col-md-8">
+            <div class="card">
+              <div class="card-header">
+                <!-- SARAH Updates -->
+                <h4 class="title">Machine Learning using Neural Network & KNN</h4>
+              </div>
+              <div class="card-body">
+                <!-- UMAR Machine Learning Intro -->
+                <p>The team developed a machine learning model to predict if the song will be a hit based on certain attributes of the song. 
+                  At first we tried to predict the exact popularity of the song but the models accuracy was very low, hence the output nodes were decreased to just two,  
+                  will the song be a hit or a miss? (i.e. Will the song end up in top 10 of the billboard 100?)</p><br>
+                <table class="table table-sm table-responsive-lg">
+                  <thead>
+                    <tr>
+                      <th scope="col">Activation</th>
+                      <th scope="col">Input nodes</th>
+                      <th scope="col">Hidden nodes</th>
+                      <th scope="col">Output nodes</th>
+                      <th scope="col">Epochs</th>
+                      <th scope="col">Accuracy (test data)</th>
+                      <th scope="col">Deep layer</th>
+                      <th scope="col">Accuracy (test data)</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>reLu</td>
+                      <td>13</td>
+                      <td>39</td>
+                      <td>2</td>
+                      <td>100</td>
+                      <td>67.7%</td>
+                      <td>1</td>
+                      <td>67.8%</td>
+                    </tr>
+                    <tr>
+                      <td>sigmoid</td>
+                      <td>13</td>
+                      <td>39</td>
+                      <td>2</td>
+                      <td>100</td>
+                      <td>67.7%</td>
+                      <td>1</td>
+                      <td>68.1%</td>
+                    </tr>
+                    <tr>
+                      <td>linear</td>
+                      <td>13</td>
+                      <td>39</td>
+                      <td>2</td>
+                      <td>100</td>
+                      <td>65.6%</td>
+                      <td>1</td>
+                      <td>65.6%</td>
+                    </tr>
+                    <tr>
+                      <td>tanh</td>
+                      <td>13</td>
+                      <td>39</td>
+                      <td>2</td>
+                      <td>100</td>
+                      <td>67.9%</td>
+                      <td>1</td>
+                      <td>67.6%</td>
+                    </tr>
+                    <tr>
+                      <td>tanh</td>
+                      <td>13</td>
+                      <td>130</td>
+                      <td>2</td>
+                      <td>100</td>
+                      <td>67.8%</td>
+                      <td>1</td>
+                      <td>67.5%</td>
+                    </tr>
+                    <tr>
+                      <td>tanh</td>
+                      <td>13</td>
+                      <td>130</td>
+                      <td>2</td>
+                      <td>1000</td>
+                      <td>67.7%</td>
+                      <td>1</td>
+                      <td>62.5%</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <p>The activation functions reLu, sigmoid, linear, and tanh all produced similar <b>Accuracy</b> results. And though we added a deep layer,  the <b>Accuracy</b> did not change much.</p>
+              </div>  
+
+              <div class="card-body">
+                <table class="table table-sm table-responsive-lg">
+                  <thead>
+                    <tr>
+                      <th scope="col">Activation</th>
+                      <th scope="col">Input nodes</th>
+                      <th scope="col">Hidden nodes</th>
+                      <th scope="col">Output nodes</th>
+                      <th scope="col">Epochs</th>
+                      <th scope="col">Accuracy (test data)</th>
+                      <th scope="col">Deep layer</th>
+                      <th scope="col">Accuracy (test data)</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>reLu</td>
+                      <td>13</td>
+                      <td>39</td>
+                      <td>92</td>
+                      <td>100</td>
+                      <td>8.3%</td>
+                      <td>1</td>
+                      <td>8.3%</td>
+                    </tr>
+                    <tr>
+                      <td>reLu</td>
+                      <td>13</td>
+                      <td>39</td>
+                      <td>10</td>
+                      <td>100</td>
+                      <td>33.1%</td>
+                      <td>1</td>
+                      <td>32.9%</td>
+                    </tr>
+                    <tr>
+                      <td>reLu</td>
+                      <td>13</td>
+                      <td>39</td>
+                      <td>2</td>
+                      <td>100</td>
+                      <td>67.7%</td>
+                      <td>1</td>
+                      <td>67.8%</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <p>As we adjusted the output nodes from 92 to 10 to 2 using reLu, we found that the <b>Accuracy %</b> increased due to the relatively limited output nodes.</p>
+              </div>
+
+              <div class="card-body">
+                <table class="table table-sm table-responsive-lg">
+                  <thead>
+                    <tr>
+                      <th scope="col">Top Song Bin</th>
+                      <th scope="col">Input nodes</th>
+                      <th scope="col">Hidden nodes</th>
+                      <th scope="col">Output nodes</th>
+                      <th scope="col">Epochs</th>
+                      <th scope="col">Accuracy (test data)</th>
+                      <th scope="col">Deep layer</th>
+                      <th scope="col">Accuracy (test data)</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>10</td>
+                      <td>13</td>
+                      <td>39</td>
+                      <td>2</td>
+                      <td>100</td>
+                      <td>67.9%</td>
+                      <td>1</td>
+                      <td>67.6%</td>
+                    </tr>
+                    <tr>
+                      <td>15</td>
+                      <td>13</td>
+                      <td>39</td>
+                      <td>2</td>
+                      <td>100</td>
+                      <td>61.7%</td>
+                      <td>1</td>
+                      <td>61.3%</td>
+                    </tr>
+                    <tr>
+                      <td>25</td>
+                      <td>13</td>
+                      <td>39</td>
+                      <td>2</td>
+                      <td>100</td>
+                      <td>67.7%</td>
+                      <td>1</td>
+                      <td>65.9%</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <p>We did not observe a change in the <b>Accuracy</b> upon increasing the number of songs in the top song bin.</p>
+                  <br>
+                <p>We also built a KNN classifier model that resulted in a similar accuracy of 67.4% as our NN model. Considering both NN and KNN models generated similar accuracy levels, we believe our NN model is robust and can be enhanced by adding more data or training it with a more comprehensive data set.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card card-user">
+              <div class="card-body">
+                <p class="card-text">
+                  <div class="author">
+                    <div class="block block-one"></div>
+                    <div class="block block-two"></div>
+                    <div class="block block-three"></div>
+                    <div class="block block-four"></div>
+                    <!-- UMAR removed unnecassary code -->
+                    <div class="MLcard-description">
+                      68.1
+                    </div>
+                    <p>PERCENT</p>
+                  </div>
+                </p>
+                <div class="MLdescription">
+                  ACCURACY
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer class="footer">
+        <div class="container-fluid">
+          <ul class="nav">
+            <li class="nav-item">
+              <a href="https://billboard-top-100.herokuapp.com/" class="nav-link">
+                <!-- ODROD updated the Team name -->
+                Muskatweeters
+                <!-- ODROD update completed -->
+              </a>
+            </li>
+            <li class="nav-item">
+              <!-- ODROD updated the Git repo details -->
+              <a href="https://github.com/TheGreekGoddess/Project_3" class="nav-link">
+                GitHub Repository
+              <!-- ODROD update completed -->
+              </a>
+            </li>
+            <!-- ODROD commented code -->
+            <li class="nav-item">
+              <!-- ODROD updated the Project Landfires details -->
+              <a href="https://datavisproject2.herokuapp.com/" class="nav-link">
+                Project Landfires
+              <!-- ODROD update completed -->
+              </a>
+            </li>
+            <!-- ODROD update completed -->
+          </ul>
+          <div class="copyright">
+            <!-- ODROD updated the footer details -->
+            © Made in  
+            <script>
+              document.write(new Date().getFullYear())
+            </script> with <i class="tim-icons icon-heart-2"></i> by the 
+            <a href="javascript:void(0)" target="_blank">Muskatweeters</a> for an unforgettable music experience during extraordinary times.
+            <!-- ODROD update completed -->
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+  <div class="fixed-plugin">
+    <div class="dropdown show-dropdown">
+      <a href="#" data-toggle="dropdown">
+        <i class="fa fa-cog fa-2x"> </i>
+      </a>
+      <ul class="dropdown-menu">
+        <li class="header-title"> Sidebar Background</li>
+        <li class="adjustments-line">
+          <a href="javascript:void(0)" class="switch-trigger background-color">
+            <div class="badge-colors text-center">
+              <span class="badge filter badge-primary active" data-color="primary"></span>
+              <span class="badge filter badge-info" data-color="blue"></span>
+              <span class="badge filter badge-success" data-color="green"></span>
+            </div>
+            <div class="clearfix"></div>
+          </a>
+        </li>
+        <!-- UMAR updates start: added mb-3 -->	
+        <li class="adjustments-line text-center color-change mb-3" >	
+        <!-- UMAR updates end -->
+          <span class="color-label">LIGHT MODE</span>
+          <span class="badge light-badge mr-2"></span>
+          <span class="badge dark-badge ml-2"></span>
+          <span class="color-label">DARK MODE</span>
+          <!-- UMAR code deleted, ODROD commented out -->
+          <!-- UMAR code deleted, ODROD commented out -->
+        </li>
+      </ul>
+    </div>
+  </div>
+  <!-- UMAR added d3 core library to HTML-->	
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>	
+  <!-- UMAR updates end -->
+  <!--   Core JS Files   -->
+  <script src="assets/js/core/jquery.min.js"></script>
+  <script src="assets/js/core/popper.min.js"></script>
+  <script src="assets/js/core/bootstrap.min.js"></script>
+  <script src="assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
+  <!-- Chart JS -->
+  <script src="assets/js/plugins/chartjs.min.js"></script>
+  <!--  Notifications Plugin    -->
+  <script src="assets/js/plugins/bootstrap-notify.js"></script>
+  <!-- Control Center for Black Dashboard: parallax effects, scripts for the example pages etc -->
+  <script src="assets/js/black-dashboard.min.js?v=1.0.0"></script>
+ 
+  <script>
+    $(document).ready(function() {
+      $().ready(function() {
+        $sidebar = $('.sidebar');
+        $navbar = $('.navbar');
+        $main_panel = $('.main-panel');
+
+        $full_page = $('.full-page');
+
+        $sidebar_responsive = $('body > .navbar-collapse');
+        sidebar_mini_active = true;
+        white_color = false;
+
+        window_width = $(window).width();
+
+        fixed_plugin_open = $('.sidebar .sidebar-wrapper .nav li.active a p').html();
+
+
+
+        $('.fixed-plugin a').click(function(event) {
+          if ($(this).hasClass('switch-trigger')) {
+            if (event.stopPropagation) {
+              event.stopPropagation();
+            } else if (window.event) {
+              window.event.cancelBubble = true;
+            }
+          }
+        });
+
+        $('.fixed-plugin .background-color span').click(function() {
+          $(this).siblings().removeClass('active');
+          $(this).addClass('active');
+
+          var new_color = $(this).data('color');
+
+          if ($sidebar.length != 0) {
+            $sidebar.attr('data', new_color);
+          }
+
+          if ($main_panel.length != 0) {
+            $main_panel.attr('data', new_color);
+          }
+
+          if ($full_page.length != 0) {
+            $full_page.attr('filter-color', new_color);
+          }
+
+          if ($sidebar_responsive.length != 0) {
+            $sidebar_responsive.attr('data', new_color);
+          }
+        });
+
+        $('.switch-sidebar-mini input').on("switchChange.bootstrapSwitch", function() {
+          var $btn = $(this);
+
+          if (sidebar_mini_active == true) {
+            $('body').removeClass('sidebar-mini');
+            sidebar_mini_active = false;
+            blackDashboard.showSidebarMessage('Sidebar mini deactivated...');
+          } else {
+            $('body').addClass('sidebar-mini');
+            sidebar_mini_active = true;
+            blackDashboard.showSidebarMessage('Sidebar mini activated...');
+          }
+
+          // we simulate the window Resize so the charts will get updated in realtime.
+          var simulateWindowResize = setInterval(function() {
+            window.dispatchEvent(new Event('resize'));
+          }, 180);
+
+          // we stop the simulation of Window Resize after the animations are completed
+          setTimeout(function() {
+            clearInterval(simulateWindowResize);
+          }, 1000);
+        });
+
+        $('.switch-change-color input').on("switchChange.bootstrapSwitch", function() {
+          var $btn = $(this);
+
+          if (white_color == true) {
+
+            $('body').addClass('change-background');
+            setTimeout(function() {
+              $('body').removeClass('change-background');
+              $('body').removeClass('white-content');
+            }, 900);
+            white_color = false;
+          } else {
+
+            $('body').addClass('change-background');
+            setTimeout(function() {
+              $('body').removeClass('change-background');
+              $('body').addClass('white-content');
+            }, 900);
+
+            white_color = true;
+          }
+
+
+        });
+
+        $('.light-badge').click(function() {
+          $('body').addClass('white-content');
+        });
+
+        $('.dark-badge').click(function() {
+          $('body').removeClass('white-content');
+        });
+      });
+    });
+  </script>
+</body>
+
+</html>

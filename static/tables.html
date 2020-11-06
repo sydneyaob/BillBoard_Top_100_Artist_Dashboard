@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="apple-touch-icon" sizes="76x76" href="assets/img/apple-icon.png">
+  <link rel="icon" type="image/png" href="assets/img/avatar.png">
+  <!-- ODROD updated the title -->
+  <title>    
+    Billboard Data Table
+  </title>
+  <!-- ODROD update completed -->
+  <!--     Fonts and icons     -->
+  <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,600,700,800" rel="stylesheet" />
+  <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+  <!-- Nucleo Icons -->
+  <link href="assets/css/nucleo-icons.css" rel="stylesheet" />
+  <!-- CSS Files -->
+  <link href="assets/css/black-dashboard.css?v=1.0.0" rel="stylesheet" />
+  <!-- CSS Just for demo purpose -->
+  <link href="assets/demo/demo.css" rel="stylesheet" />
+</head>
+
+<body class="">
+  <div class="wrapper">
+    <div class="sidebar">
+      <!--
+        Tip 1: You can change the color of the sidebar using: data-color="blue | green | orange | red"
+    -->
+      <div class="sidebar-wrapper">
+        <div class="logo">
+          <a href="javascript:void(0)" class="simple-text logo-mini">
+            <!-- ODROD updated the logo and Team name -->
+            DJ
+          </a>
+          <a href="javascript:void(0)" class="simple-text logo-normal">
+            Muskatweeters
+            <!-- ODROD update completed -->
+          </a>
+        </div>
+        <ul class="nav">
+          <li >
+            <!-- ODROD updated the logo and Team name -->
+            <a href="https://billboard-top-100.herokuapp.com/">
+              <i class="tim-icons icon-chart-pie-36"></i>
+              <p>Dashboard</p>
+              <!-- ODROD update completed -->
+            </a>
+          </li>
+          <li>
+            <!-- ODROD updated the logo and Team name -->
+            <a href="./team_profiles.html">
+              <i class="tim-icons icon-single-02"></i>
+              <p>Team Profiles</p>
+              <!-- ODROD update completed -->
+            </a>
+          </li>
+          <li>
+            <!-- ODROD updated the logo and Team name -->
+            <a href="./tableau_visualization.html">
+              <i class="tim-icons icon-chart-bar-32"></i>
+              <p>Tableau Visualization</p>
+              <!-- ODROD update completed -->
+            </a>
+          </li>
+          <li>
+            <!-- ODROD updated the logo and Team name -->
+            <a href="./definitions.html">
+              <i class="tim-icons icon-time-alarm"></i>
+              <p>Timeline & Definitions</p>
+              <!-- ODROD update completed -->
+            </a>
+          </li>
+          <li>
+            <!-- ODROD updated the logo and Team name -->
+            <a href="./machine_learning.html">
+              <i class="tim-icons icon-atom"></i>
+              <p>Machine Learning</p>
+              <!-- ODROD update completed -->
+            </a>
+          </li>
+          <li class="active ">
+            <!-- ODROD updated the logo and Team name -->
+            <a href="./tables.html">
+              <i class="tim-icons icon-headphones"></i>
+              <p>Billboard Data</p>
+              <!-- ODROD update completed -->
+            </a>
+          </li>
+          <li>
+            <!-- ODROD updated the logo and Team name -->
+            <a href="./project_summary.html">
+              <i class="tim-icons icon-notes"></i>
+              <p>Project Summary</p>
+              <!-- ODROD update completed -->
+            </a>
+          </li>
+          <li>
+            <!-- ODROD added a tab for Bob -->
+            <a href="./the_master.html">
+              <i class="tim-icons icon-satisfied"></i>
+              <p>The Master</p>
+              <!-- ODROD update completed -->
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="main-panel">
+      <!-- Navbar -->
+      <nav class="navbar navbar-expand-lg navbar-absolute navbar-transparent">
+        <div class="container-fluid">
+          <div class="navbar-wrapper">
+            <div class="navbar-toggle d-inline">
+              <button type="button" class="navbar-toggler">
+                <span class="navbar-toggler-bar bar1"></span>
+                <span class="navbar-toggler-bar bar2"></span>
+                <span class="navbar-toggler-bar bar3"></span>
+              </button>
+            </div>
+            <!-- ODROD updated tab name -->
+            <a class="navbar-brand" href="javascript:void(0)">Billboard Data Table</a>
+            <!-- ODROD update completed -->
+          </div>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-bar navbar-kebab"></span>
+            <span class="navbar-toggler-bar navbar-kebab"></span>
+            <span class="navbar-toggler-bar navbar-kebab"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navigation">
+            <ul class="navbar-nav ml-auto">
+              <!-- ODROD commenting code out -->
+              <li class="search-bar input-group">
+              </li>
+              <!-- ODROD updates complete  -->
+                <!-- UMAR code deleted, ODROD commented out -->
+              <li class="separator d-lg-none"></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <div class="modal modal-search fade" id="searchModal" tabindex="-1" role="dialog" aria-labelledby="searchModal" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <!-- UMAR changed id = "SearchBar" and removed placeholder -->
+              <input type="text" class="form-control" id="SearchBar">
+              <!-- UMAR added id="close" for click identification in SearchBar JS file -->
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <i class="tim-icons icon-simple-remove"></i>
+              </button>
+            </div>
+            <!-- UMAR Working Search Bar -->
+            <div id="SearchItemsContainer"> 
+            </div>
+            <!-- UMAR updates end -->
+          </div>
+        </div>
+      </div>
+      <!-- End Navbar -->
+      <div class="content">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="card ">
+              <div class="card-header">
+                <h4 class="card-title"> Billboard Top 5 Solo Artists by Followers</h4>
+              </div>
+              <div class="card-body">
+                <!-- ODROD table responsive on large screen -->
+                <div class="table table-responsive-lg">
+                  <table class="table tablesorter " id="">
+                    <thead>
+                      <tr style="text-align: left;">
+                        <th>Artist</th>
+                        <th>Followers</th>
+                        <th>Genres</th>
+                        <th>Total Albums</th>
+                        <th>First Album Released In</th>
+                        <th>Type</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Ed Sheeran</td>
+                        <td>52,698,756</td>
+                        <td>Pop, UK Pop</td>
+                        <td>8</td>
+                        <td>2011</td>
+                        <td>Solo</td>
+                      </tr>
+                      <tr>
+                        <td>Drake</td>
+                        <td>41,420,478</td>
+                        <td>Canadian Hip Hop, Canadian Pop, Hip Hop, Pop Rap, Rap, Toronto Rap</td>
+                        <td>11</td>
+                        <td>2010</td>
+                        <td>Solo</td>
+                      </tr>
+                      <tr>
+                        <td>Rihanna</td>
+                        <td>34,436,700</td>
+                        <td>Barbadian Pop, Dance Pop, Pop, Post-Teen Pop, R&amp;B, Urban Contemporary</td>
+                        <td>16</td>
+                        <td>2005</td>
+                        <td>Solo</td>
+                      </tr>
+                      <tr>
+                        <td>Justin Bieber</td>
+                        <td>30,711,450</td>
+                        <td>Canadian Pop, Dance Pop, Pop, Post-Teen Pop</td>
+                        <td>10</td>
+                        <td>2009</td>
+                        <td>Solo</td>
+                      </tr>
+                      <tr>
+                        <td>Eminem</td>
+                        <td>30,220,119</td>
+                        <td>Detroit Hip Hop, G Funk, Hip Hop, Rap</td>
+                        <td>12</td>
+                        <td>1999</td>
+                        <td>Solo</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-12">
+            <div class="card ">
+              <div class="card-header">
+                <h4 class="card-title"> Billboard Top 5 Group Artists by Followers</h4>
+              </div>
+              <div class="card-body">
+                <!-- ODROD table responsive on large screen -->
+                <div class="table table-responsive-lg">
+                  <table class="table tablesorter " id="">
+                    <thead>
+                      <tr style="text-align: left;">
+                        <th>Artist</th>
+                        <th>Followers</th>
+                        <th>Genres</th>
+                        <th>TOTAL ALBUMS</th>
+                        <th>	FIRST ALBUM RELEASED IN</th>
+                        <th>TYPE</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Coldplay</td>
+                        <td>22,458,057</td>
+                        <td>Permanent Wave, Pop</td>
+                        <td>10</td>
+                        <td>2000</td>
+                        <td>Group</td>
+                      </tr>
+                      <tr>
+                        <td>Queen</td>
+                        <td>20,501,475</td>
+                        <td>Glam Rock, Rock</td>
+                        <td>28</td>
+                        <td>1973</td>
+                        <td>Group</td>
+                      </tr>
+                      <tr>
+                        <td>Maroon 5</td>
+                        <td>20,445,189</td>
+                        <td>Pop</td>
+                        <td>11</td>
+                        <td>2002</td>
+                        <td>Group</td>
+                      </tr>
+                      <tr>
+                        <td>Twenty One Pilots</td>
+                        <td>14,842,963</td>
+                        <td>Indie Pop, Pop Punk, Rock</td>
+                        <td>5</td>
+                        <td>2009</td>
+                        <td>Group</td>
+                      </tr>
+                      <tr>
+                        <td>Guns N' Roses</td>
+                        <td>14,174,998</td>
+                        <td>Glam Metal, Hard Rock, Rock</td>
+                        <td>6</td>
+                        <td>1987</td>
+                        <td>Group</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-12">
+            <div class="card ">
+              <div class="card-header">
+                <h4 class="card-title"> Billboard Song Attributes Table</h4>
+                <!-- <p class="category"> Here is a subtitle for this table</p> -->
+              </div>
+              <div class="card-body">
+                <!-- ODROD table responsive on large screen -->
+                <div class="table table-responsive-lg">
+                  <table class="table tablesorter " id="">
+                    <thead>
+                      <tr style="text-align: left;">
+                        <th>Artist</th>
+                        <th>Name</th>
+                        <th>Duration</th>
+                        <th>Popularity</th>
+                        <th>Acousticness</th>
+                        <th>Danceability</th>
+                        <th>Energy</th>
+                        <th>Instrumentalness</th>
+                        <th>Liveness</th>
+                        <th>Loudness</th>
+                        <th>Speechiness</th>
+                        <th>Tempo</th>
+                        <th>Valence</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Regina Spektor</td>
+                        <td>Whisper</td>
+                        <td>44,813</td>
+                        <td>27</td>
+                        <td>0.01</td>
+                        <td>0.63</td>
+                        <td>0.03</td>
+                        <td>0.00</td>
+                        <td>0.09</td>
+                        <td>-31.18</td>
+                        <td>0.23</td>
+                        <td>90.63</td>
+                        <td>0.24</td>
+                      </tr>
+                      <tr>
+                        <td>The Wallflowers</td>
+                        <td>A Proud Moment - Interview</td>
+                        <td>58,760</td>
+                        <td>0</td>
+                        <td>0.13</td>
+                        <td>0.62</td>
+                        <td>0.11</td>
+                        <td>0.00</td>
+                        <td>0.36</td>
+                        <td>-15.49</td>
+                        <td>0.93</td>
+                        <td>169.12</td>
+                        <td>0.70</td>
+                      </tr>
+                      <tr>
+                        <td>Dunn</td>
+                        <td>One More Roll of the Dice</td>
+                        <td>245,187</td>
+                        <td>32</td>
+                        <td>0.03</td>
+                        <td>0.65</td>
+                        <td>0.85</td>
+                        <td>0.00</td>
+                        <td>0.40</td>
+                        <td>-3.97</td>
+                        <td>0.03</td>
+                        <td>104.11</td>
+                        <td>0.87</td>
+                      </tr>
+                      <tr>
+                        <td>James Newton Howard</td>
+                        <td>Transfer Command - From "The Hunger Games: Mockingjay Part 2" (Original Motion Picture Score)"</td>
+                        <td>494,053</td>
+                        <td>7</td>
+                        <td>0.04</td>
+                        <td>0.12</td>
+                        <td>0.07</td>
+                        <td>0.75</td>
+                        <td>0.10</td>
+                        <td>-19.29</td>
+                        <td>0.04</td>
+                        <td>87.70</td>
+                        <td>0.03</td>
+                      </tr>
+                      <tr>
+                        <td>Sheryl Crow</td>
+                        <td>If It Makes You Happy - Live</td>
+                        <td>303,200</td>
+                        <td>25</td>
+                        <td>0.03</td>
+                        <td>0.43</td>
+                        <td>0.79</td>
+                        <td>0.00</td>
+                        <td>0.97</td>
+                        <td>-7.27</td>
+                        <td>0.03</td>
+                        <td>104.25</td>
+                        <td>0.34</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="card  ">
+              <div class="card-header">
+                <h4 class="card-title"> Billboard Artist Songs & Genre Table</h4>
+                <!-- <p class="category"> Here is a subtitle for this table</p> -->
+              </div>
+              <div class="card-body">
+                <!-- ODROD table responsive on large screen -->
+                <div class="table table-responsive-lg">
+                  <table class="table tablesorter " id="">
+                    <thead>
+                      <tr style="text-align: left;">
+                        <th></th>
+                        <th>Artists</th>
+                        <th>Song Name</th>
+                        <th>Genre</th>
+                        <th>Release Date</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th>0</th>
+                        <td>Lil Nas</td>
+                        <td>Old Town Road</td>
+                        <td>Country, Atlanta, Alternative Country, Hip-Hop, Trap,Memes, Remix, Country Rap, Rap</td>
+                        <td>5-Apr-19</td>
+                      </tr>
+                      <tr>
+                        <th>1</th>
+                        <td>Shawn Mendes & Camila Cabello</td>
+                        <td>Senorita</td>
+                        <td>Pop</td>
+                        <td>21-Jun-19</td>
+                      </tr>
+                      <tr>
+                        <th>2</th>
+                        <td>Billie Eilish</td>
+                        <td>Bad Guy</td>
+                        <td>Hip-Hop, Dark Pop, House, Trap,Memes, Alternative Dance, Alternative, Alternative Pop, Dance-Pop, Dance, Electro-Pop, Electro, Pop</td>
+                        <td>29-Mar-19</td>
+                      </tr>
+                      <tr>
+                        <th>3</th>
+                        <td>Khalid</td>
+                        <td>Talk</td>
+                        <td>Synth-Pop, Pop</td>
+                        <td>7-Feb-19</td>
+                      </tr>
+                      <tr>
+                        <th>4</th>
+                        <td>Ed Sheeran, Justin Bieber</td>
+                        <td>I Don't Care</td>
+                        <td>Canada, UK, Dance, Dance-Pop, Pop</td>
+                        <td>10-May-19</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer class="footer">
+        <div class="container-fluid">
+          <ul class="nav">
+            <li class="nav-item">
+              <a href="https://billboard-top-100.herokuapp.com/" class="nav-link">
+                <!-- ODROD updated the Team name -->
+                Muskatweeters
+                <!-- ODROD update completed -->
+              </a>
+            </li>
+            <li class="nav-item">
+              <!-- ODROD updated the Git repo details -->
+              <a href="https://github.com/TheGreekGoddess/Project_3" class="nav-link">
+                GitHub Repository
+              <!-- ODROD update completed -->
+              </a>
+            </li>
+            <!-- ODROD commented code -->
+            <li class="nav-item">
+              <!-- ODROD updated the Project Landfires details -->
+              <a href="https://datavisproject2.herokuapp.com/" class="nav-link">
+                Project Landfires
+              <!-- ODROD update completed -->
+              </a>
+            </li>
+            <!-- ODROD update completed -->
+          </ul>
+          <div class="copyright">
+            <!-- ODROD updated the footer details -->
+            © Made in  
+            <script>
+              document.write(new Date().getFullYear())
+            </script> with <i class="tim-icons icon-heart-2"></i> by the 
+            <a href="javascript:void(0)" target="_blank">Muskatweeters</a> for an unforgettable music experience during extraordinary times.
+            <!-- ODROD update completed -->
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+  <div class="fixed-plugin">
+    <div class="dropdown show-dropdown">
+      <a href="#" data-toggle="dropdown">
+        <i class="fa fa-cog fa-2x"> </i>
+      </a>
+      <ul class="dropdown-menu">
+        <li class="header-title"> Sidebar Background</li>
+        <li class="adjustments-line">
+          <a href="javascript:void(0)" class="switch-trigger background-color">
+            <div class="badge-colors text-center">
+              <span class="badge filter badge-primary active" data-color="primary"></span>
+              <span class="badge filter badge-info" data-color="blue"></span>
+              <span class="badge filter badge-success" data-color="green"></span>
+            </div>
+            <div class="clearfix"></div>
+          </a>
+        </li>
+        <!-- UMAR updates start: added mb-3 -->	
+        <li class="adjustments-line text-center color-change mb-3" >	
+        <!-- UMAR updates end -->
+          <span class="color-label">LIGHT MODE</span>
+          <span class="badge light-badge mr-2"></span>
+          <span class="badge dark-badge ml-2"></span>
+          <span class="color-label">DARK MODE</span>
+          <!-- UMAR code deleted, ODROD commented out -->
+          <!-- UMAR code deleted, ODROD commented out -->
+        </li>
+      </ul>
+    </div>
+  </div>
+  <!-- UMAR added d3 core library to HTML-->	
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>	
+  <!-- UMAR updates end -->
+  <!--   Core JS Files   -->
+  <script src="assets/js/core/jquery.min.js"></script>
+  <script src="assets/js/core/popper.min.js"></script>
+  <script src="assets/js/core/bootstrap.min.js"></script>
+  <script src="assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
+  <!-- Chart JS -->
+  <script src="assets/js/plugins/chartjs.min.js"></script>
+  <!--  Definitions Plugin    -->
+  <script src="assets/js/plugins/bootstrap-notify.js"></script>
+  <!-- Control Center for Black Dashboard: parallax effects, scripts for the example pages etc -->
+  <script src="assets/js/black-dashboard.min.js?v=1.0.0"></script>
+
+  <script>
+    $(document).ready(function() {
+      $().ready(function() {
+        $sidebar = $('.sidebar');
+        $navbar = $('.navbar');
+        $main_panel = $('.main-panel');
+
+        $full_page = $('.full-page');
+
+        $sidebar_responsive = $('body > .navbar-collapse');
+        sidebar_mini_active = true;
+        white_color = false;
+
+        window_width = $(window).width();
+
+        fixed_plugin_open = $('.sidebar .sidebar-wrapper .nav li.active a p').html();
+
+
+
+        $('.fixed-plugin a').click(function(event) {
+          if ($(this).hasClass('switch-trigger')) {
+            if (event.stopPropagation) {
+              event.stopPropagation();
+            } else if (window.event) {
+              window.event.cancelBubble = true;
+            }
+          }
+        });
+
+        $('.fixed-plugin .background-color span').click(function() {
+          $(this).siblings().removeClass('active');
+          $(this).addClass('active');
+
+          var new_color = $(this).data('color');
+
+          if ($sidebar.length != 0) {
+            $sidebar.attr('data', new_color);
+          }
+
+          if ($main_panel.length != 0) {
+            $main_panel.attr('data', new_color);
+          }
+
+          if ($full_page.length != 0) {
+            $full_page.attr('filter-color', new_color);
+          }
+
+          if ($sidebar_responsive.length != 0) {
+            $sidebar_responsive.attr('data', new_color);
+          }
+        });
+
+        $('.switch-sidebar-mini input').on("switchChange.bootstrapSwitch", function() {
+          var $btn = $(this);
+
+          if (sidebar_mini_active == true) {
+            $('body').removeClass('sidebar-mini');
+            sidebar_mini_active = false;
+            blackDashboard.showSidebarMessage('Sidebar mini deactivated...');
+          } else {
+            $('body').addClass('sidebar-mini');
+            sidebar_mini_active = true;
+            blackDashboard.showSidebarMessage('Sidebar mini activated...');
+          }
+
+          // we simulate the window Resize so the charts will get updated in realtime.
+          var simulateWindowResize = setInterval(function() {
+            window.dispatchEvent(new Event('resize'));
+          }, 180);
+
+          // we stop the simulation of Window Resize after the animations are completed
+          setTimeout(function() {
+            clearInterval(simulateWindowResize);
+          }, 1000);
+        });
+
+        $('.switch-change-color input').on("switchChange.bootstrapSwitch", function() {
+          var $btn = $(this);
+
+          if (white_color == true) {
+
+            $('body').addClass('change-background');
+            setTimeout(function() {
+              $('body').removeClass('change-background');
+              $('body').removeClass('white-content');
+            }, 900);
+            white_color = false;
+          } else {
+
+            $('body').addClass('change-background');
+            setTimeout(function() {
+              $('body').removeClass('change-background');
+              $('body').addClass('white-content');
+            }, 900);
+
+            white_color = true;
+          }
+
+
+        });
+
+        $('.light-badge').click(function() {
+          $('body').addClass('white-content');
+        });
+
+        $('.dark-badge').click(function() {
+          $('body').removeClass('white-content');
+        });
+      });
+    });
+  </script>
+</body>
+
+</html>
