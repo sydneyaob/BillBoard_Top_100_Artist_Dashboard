@@ -16,7 +16,7 @@ After cleaning up dataset of BillBoard Top 100 artist from 1999 to 2020 found on
 - Top Group Artist by Followers: Coldplay
 
 # MACHINE LEARNING ANALYSIS
-The team developed a machine learning model to predict if the song will be a hit based on certain attributes of the song. At first we tried to predict the exact popularity of the song but the models accuracy was very low, hence the output nodes were decreased to just two, will the song be a hit or a miss? (i.e. Will the song end up in top 10 of the billboard 100?)
+The team developed a machine learning model to predict if the song will be a hit based on certain attributes of the song. Our model was developed using tesnorflow and deep learning methodologies, further verified by using KNN classifier algorithm. At first we tried to predict the exact popularity of the song but the models accuracy was very low, hence the output nodes were decreased to just two, will the song be a hit or a miss? (i.e. Will the song end up in top 10 of the billboard 100?)
 
 The activation functions reLu, sigmoid, linear, and tanh all produced similar Accuracy results. And though we added a deep layer, the Accuracy % did not change much.
 
